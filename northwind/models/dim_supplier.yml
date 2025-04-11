@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_supplier
+    description: Supplier dimension with contact and location info.
+    columns:
+      - name: supplierkey
+        tests:
+          - not_null
+          - unique
+      - name: SupplierID
+        tests:
+          - not_null
+          - unique

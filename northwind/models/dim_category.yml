@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_category
+    description: Category dimension with category info.
+    columns:
+      - name: categorykey
+        tests:
+          - not_null
+          - unique
+      - name: CategoryID
+        tests:
+          - not_null
+          - unique

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: Product dimension with details and lookups from category and supplier.
+    columns:
+      - name: productkey
+        description: Surrogate key for the product.
+        tests:
+          - not_null
+          - unique
+
+      - name: ProductID
+        description: Business key from source table.
+        tests:
+          - not_null
+          - unique
+
+      - name: ProductName
+        description: Name of the product.
