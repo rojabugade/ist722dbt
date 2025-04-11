@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: Sales fact table — one row per product per order.
+    columns:
+      - name: OrderID
+        tests:
+          - not_null
+      - name: productkey
+        tests:
+          - not_null
+      - name: categorykey
+      - name: supplierkey
+      - name: customerkey
+      - name: employeekey
+      - name: orderdatekey
+      - name: Quantity
+      - name: UnitPrice
+      - name: Discount
+      - name: salesamount

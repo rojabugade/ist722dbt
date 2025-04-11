@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: obt_sales
+    description: One big table that joins fact_sales with all related dimensions.

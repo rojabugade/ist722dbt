@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: obt_order_fulfillment
+    description: The order fulfillment fact table combined with all its dimensions into one big table for BI tools.
