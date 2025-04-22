@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_vote
+    description: "Dimension table for Stack Overflow votes"
+    columns:
+      - name: vote_id
+        description: "Primary key for the vote"
+        tests:
+          - unique
+          - not_null
+      - name: post_id
+        description: "ID of the post that received the vote"
+      - name: vote_type_id
+        description: "Type of the vote (upvote, downvote, etc.)"
+      - name: vote_creation_date
+        description: "Date and time the vote was cast"

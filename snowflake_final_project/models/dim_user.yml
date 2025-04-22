@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_user
+    description: "Dimension table for Stack Overflow users"
+    columns:
+      - name: user_id
+        description: "Surrogate key for the user"
+        tests:
+          - unique
+          - not_null
+      - name: display_name
+        description: "User's display name"
+      - name: reputation
+        description: "Reputation score"
+      - name: creation_date
+        description: "Account creation timestamp"
+      - name: last_access_date
+        description: "Last access timestamp"
+      - name: website_url
+        description: "User's website"
+      - name: location
+        description: "User's location"
+      - name: about_me
+        description: "User's self description"
+      - name: views
+        description: "Profile view count"
+      - name: upvotes
+        description: "Number of upvotes given"
+      - name: downvotes
+        description: "Number of downvotes given"
+      - name: account_id
+        description: "StackExchange account ID"

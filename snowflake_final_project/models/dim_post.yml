@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: dim_post
+    description: "Dimension table for Stack Overflow posts"
+    columns:
+      - name: post_id
+        description: "Primary key for the post"
+        tests:
+          - unique
+          - not_null
+      - name: post_type_id
+        description: "Indicates whether post is a question or answer"
+      - name: creation_date
+        description: "Timestamp when the post was created"
+      - name: score
+        description: "Net score (upvotes - downvotes)"
+      - name: view_count
+        description: "Number of times the post was viewed"
+      - name: body
+        description: "Full post content"
+      - name: owner_user_id
+        description: "User ID who created the post"
+      - name: answer_count
+        description: "Number of answers (only for questions)"
+      - name: comment_count
+        description: "Number of comments on the post"
+      - name: accepted_answer_id
+        description: "ID of the accepted answer"
+      - name: tags
+        description: "Tags associated with the post"

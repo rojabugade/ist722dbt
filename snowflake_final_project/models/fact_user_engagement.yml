@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: fact_user_engagement
+    description: >
+      Fact table capturing user engagement across posts, votes, comments, and reputation.
+      Each row represents one user activity event.
+    columns:
+      - name: user_id
+        description: "ID of the user involved in the activity"
+        tests:
+          - not_null
+      - name: activity_type
+        description: "Type of activity (vote, comment, post, reputation_snapshot)"
+      - name: activity_timestamp
+        description: "Timestamp when the activity occurred"
+      - name: votes_received
+        description: "Vote engagement count for this activity"
+      - name: comments_received
+        description: "Comment engagement count for this activity"
+      - name: posts_created
+        description: "Post creation count for this activity"
+      - name: reputation_change
+        description: "Reputation recorded at account snapshot"
