@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_comment
+    description: "Dimension table for comments on posts"
+    columns:
+      - name: comment_id
+        description: "Primary key for the comment"
+        tests:
+          - unique
+          - not_null
+      - name: post_id
+        description: "ID of the post the comment belongs to"
+      - name: score
+        description: "Vote score of the comment"
+      - name: comment_text
+        description: "Full text of the comment"
+      - name: creation_date
+        description: "Timestamp when the comment was posted"
+      - name: user_id
+        description: "ID of the user who made the comment"
+      - name: user_display_name
+        description: "Name of the user who posted the comment"
