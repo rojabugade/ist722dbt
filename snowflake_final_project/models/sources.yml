@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: public
+    database: SNOWFLAKE_FINAL_PROJECT
+    schema: PUBLIC
+    tables:
+      - name: users
+        description: "Raw StackOverflow Users table"
+      - name: posts
+        description: "Raw StackOverflow Posts table"
+      - name: comments
+        description: "Raw StackOverflow Comments table"
