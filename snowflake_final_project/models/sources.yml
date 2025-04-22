@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: PUBLIC
+    database: SNOWFLAKE_FINAL_PROJECT  # Ensure this matches the correct database
+    schema: PUBLIC
+    tables:
+      - name: COMMENTS
+      - name: POSTS
+      - name: USERS
+      - name: VOTES
