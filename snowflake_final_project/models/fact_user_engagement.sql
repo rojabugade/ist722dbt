@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 WITH comment_activity AS (
     SELECT
         TRY_TO_NUMBER(c._USERID) AS user_id,
@@ -7,7 +9,7 @@ WITH comment_activity AS (
         1 AS comments_received,
         0 AS posts_created,
         0 AS reputation_change
-    FROM SNOWFLAKE_FINAL_PROJECT.PUBLIC.COMMENTS c
+    FROM {{ source('public', 'comments') }} c
     WHERE TRY_TO_NUMBER(c._USERID) IS NOT NULL
 ),
 
@@ -20,7 +22,7 @@ post_activity AS (
         0 AS comments_received,
         1 AS posts_created,
         0 AS reputation_change
-    FROM SNOWFLAKE_FINAL_PROJECT.PUBLIC.POSTS p
+    FROM {{ source('public', 'posts') }} p
     WHERE TRY_TO_NUMBER(p._OWNERUSERID) IS NOT NULL
 ),
 
@@ -33,7 +35,7 @@ user_snapshot AS (
         0 AS comments_received,
         0 AS posts_created,
         TRY_TO_NUMBER(u._REPUTATION) AS reputation_change
-    FROM SNOWFLAKE_FINAL_PROJECT.PUBLIC.USERS u
+    FROM {{ source('public', 'users') }} u
     WHERE TRY_TO_NUMBER(u._ID) IS NOT NULL
 )
 

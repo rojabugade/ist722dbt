@@ -6,4 +6,5 @@ SELECT
     _CREATIONDATE AS creation_date,
     _USERID AS user_id,
     _USERDISPLAYNAME AS user_display_name
-FROM SNOWFLAKE_FINAL_PROJECT.PUBLIC.COMMENTS
+--FROM SNOWFLAKE_FINAL_PROJECT.PUBLIC.COMMENTS
+FROM {{ source('public', 'comments') }}

@@ -21,4 +21,5 @@ SELECT
     _COMMUNITYOWNEDDATE AS community_owned_date,
     _PARENTID AS parent_id,
     _LASTEDITORDISPLAYNAME AS last_editor_display_name
-FROM SNOWFLAKE_FINAL_PROJECT.PUBLIC.POSTS
+--FROM SNOWFLAKE_FINAL_PROJECT.PUBLIC.POSTS
+FROM {{ source('public', 'posts') }}
